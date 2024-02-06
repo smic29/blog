@@ -4,6 +4,7 @@ This is a Ruby on Rails lesson from Avion School.
 
 Resources:
 - [Active Record](https://guides.rubyonrails.org/active_record_migrations.html)
+<!-- - []() -->
 
 Start postgres db first:
 `$ pg_ctl start`
@@ -31,3 +32,10 @@ Concepts for models
 - Article object property => article record column
 
 02/06/2024
+- In rails console: the `.create` method will create a new object for that class and save it at the same time.
+- CRUD [Direct Link to Guide Article](https://guides.rubyonrails.org/active_record_basics.html)
+    - Create => new + save/save! || create/create!
+    - Read => finder methods (find, find_by, find_by!, etc) || where where.not
+    - Update => find + save || update
+    - Destroy => delete(avoid this)
+- ActiveRecord_Relation object quacks like an Array, so we treat it as an array/enumerable
