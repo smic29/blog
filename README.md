@@ -29,3 +29,5 @@ Concepts for models
 - model `class Article` => articles table
 - Article object => article record
 - Article object property => article record column
+
+02/06/2024

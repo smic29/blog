@@ -1,17 +1,18 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>Name:</strong>
-    <%= post.name %>
-  </p>
+<div id="<%= dom_id post %>" class='card'>
+  <div class="card-body">
+    <div class="card-title">
+      <strong>Name:</strong>
+      <%= post.name %>
+    </div>
 
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
+    <p>
+      <strong>Title:</strong>
+      <%= post.title %>
+    </p>
 
-  <p>
-    <strong>Content:</strong>
-    <%= post.content %>
-  </p>
-
+    <p>
+      <strong>Content:</strong>
+      <%= post.content %>
+    </p>
+  </div>
 </div>
