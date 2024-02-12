@@ -44,3 +44,8 @@ Concepts for models
 
 02/07/2024
 - Reviewed RESTful applications: [Ruby on Rails Web Refresher](https://www.theodinproject.com/lessons/ruby-on-rails-a-railsy-web-refresher)
+- Controllers: Method is GET
+- Rails guide on router: [Rails Routing]()
+
+02/08/2024
+- 

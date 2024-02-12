@@ -13,6 +13,10 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
   def create
     @article = Article.new(article_params)
 
@@ -22,6 +26,27 @@ class ArticlesController < ApplicationController
       else
         format.html { render :new, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def update
+    set_article
+
+    respond_to do |format|
+      if @article.update(article_params)
+        format.html { redirect_to article_url(@article), notice: "Article was successfully updated"}
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    set_article
+    @article.destroy!
+
+    respond_to do |format|
+      format.html { redirect_to articles_url, notice: "Article was successfuly deleted"}
     end
   end
 

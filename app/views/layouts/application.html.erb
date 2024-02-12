@@ -8,14 +8,40 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <style>
+    /* Center toast horizontally */
+    .toast {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    /* Prevent toast from adjusting other elements */
+    .toast-container {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      transform: translateY(-50%);
+      z-index: 1050; /* Ensure toast appears above other elements */
+    }
+  </style>
   </head>
 
   <body>
     <%= render partial: "layouts/navbar" %>
+    <%= render partial: "layouts/toast" %>
     <main class="container">
       <%= yield %>
     </main>
     <div class='ms-5 mt-5'>
     </div>
+    <script>
+      // Show toast if notice is present
+      var notice = '<%= notice %>'.trim();
+      if (notice) {
+        $('.toast .toast-body').text(notice);
+        $('.toast').toast('show');
+      }
+    </script>
   </body>
 </html>
