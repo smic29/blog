@@ -1,0 +1,24 @@
+<table class="table table-hover table-dark mt-5">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Body</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @articles.each do |article| %>
+        <tr>
+            <td><%= article.id %></td>
+            <td><%= article.title %></td>
+            <td><%= article.body %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<div>
+    <%=link_to "New Article", new_article_path, class:"btn btn-primary" %>
+</div>
+

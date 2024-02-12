@@ -39,3 +39,8 @@ Concepts for models
     - Update => find + save || update
     - Destroy => delete(avoid this)
 - ActiveRecord_Relation object quacks like an Array, so we treat it as an array/enumerable
+- VALIDATIONS
+    - Added layer of protection when adding entries to the database. Makes sure that constraints are followed even before the update request is made to the database.
+
+02/07/2024
+- Reviewed RESTful applications: [Ruby on Rails Web Refresher](https://www.theodinproject.com/lessons/ruby-on-rails-a-railsy-web-refresher)
