@@ -1,12 +1,11 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[ show ]
+  before_action :set_article, only: %i[ show edit update destroy ]
 
   def index
-    @articles = Article.all
+    @articles = Article.all.order :id
   end
 
   def show
-    @article = Article.find(params[:id])
   end
 
   def new
@@ -14,7 +13,6 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
   def create
@@ -30,8 +28,6 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    set_article
-
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to article_url(@article), notice: "Article was successfully updated"}
@@ -42,7 +38,6 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    set_article
     @article.destroy!
 
     respond_to do |format|
