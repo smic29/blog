@@ -48,4 +48,11 @@ Concepts for models
 - Rails guide on router: [Rails Routing]()
 
 02/08/2024
+- No notes taken.
+
+02/21/2024
+- Added 'Comments' model so to demonstrate table relationships.
+- `Article.first.comments()` is possible because we placed the `has_many :comments` code in `article.rb`
+- `has_many :long_comments, -> { where("length(body) > 30") }, class_name: 'Comment'`
+  - Putting this code in `article.rb` will allow you to run a method on `Article` which will return with the specified query: `length(body) > 30` which is SQL.
 - 
